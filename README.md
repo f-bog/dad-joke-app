@@ -1,3 +1,5 @@
+Dad Joke voting app built with React that fetches jokes from https://icanhazdadjoke.com/ and stores them into local storage.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
