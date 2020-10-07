@@ -21,7 +21,7 @@ class JokeList extends Component {
   }
 
   async fetchDadJokes() {
-    // new array for new jokes!
+    // new array for new jokes
     const newJokes = [];
     this.setState({ isLoading: true });
     // fetch joke and return data
