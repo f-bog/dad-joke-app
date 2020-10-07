@@ -1,0 +1,146 @@
+.JokeList {
+  display: flex;
+  position: relative;
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
+  border-radius: 5px;
+  background: white;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  -webkit-box-shadow: 0px 2px 21px -6px rgba(84, 84, 84, 1);
+  -moz-box-shadow: 0px 2px 21px -6px rgba(84, 84, 84, 1);
+  box-shadow: 0px 2px 21px -6px rgba(84, 84, 84, 1);
+}
+
+.JokeList-sidebar {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  background: linear-gradient(
+    241deg,
+    #ffa500,
+    #ffc700,
+    #ff0096,
+    #e100ff,
+    #2200ff
+  );
+  background-size: 1000% 1000%;
+  -webkit-animation: gradient 5s ease infinite;
+  -moz-animation: gradient 5s ease infinite;
+  animation: gradient 5s ease infinite;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 400px;
+  height: 100%;
+  text-align: center;
+}
+
+.logo {
+  display: block;
+  font-size: 80px;
+  margin: 0 auto;
+  color: yellow;
+}
+.JokeList-title {
+  color: white;
+  font-size: 3rem;
+}
+
+.JokeList-sidebar button {
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border-radius: 5px;
+  color: yellow;
+  background: #0077ff;
+  font-family: 'Rasa', sans-serif;
+  box-shadow: 0px 2px 16px -6px rgba(45, 21, 180, 0.425);
+  margin: 32px;
+  transition: transform 0.2s linear;
+  border: none;
+  padding: 0.9rem 1rem;
+}
+.JokeList-counter {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+}
+
+.JokeList-sidebar button:hover {
+  transform: scale(1.05);
+}
+
+.JokeList-loader {
+  font-size: 40px;
+  text-align: center;
+  color: #0077ff;
+}
+
+.spinner {
+  display: block;
+
+  margin: 0 auto;
+  font-size: 70px;
+  animation: spinner 1s linear infinite;
+}
+
+.JokeList::-webkit-scrollbar {
+  display: none;
+}
+
+.JokeList-list {
+  overflow: auto;
+  margin: 0;
+  height: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+@keyframes spinner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 11% 0%;
+  }
+  50% {
+    background-position: 90% 100%;
+  }
+  100% {
+    background-position: 11% 0%;
+  }
+}
+@-moz-keyframes gradient {
+  0% {
+    background-position: 11% 0%;
+  }
+  50% {
+    background-position: 90% 100%;
+  }
+  100% {
+    background-position: 11% 0%;
+  }
+}
+@keyframes gradient {
+  0% {
+    background-position: 11% 0%;
+  }
+  50% {
+    background-position: 90% 100%;
+  }
+  100% {
+    background-position: 11% 0%;
+  }
+}
