@@ -37,7 +37,7 @@ class JokeList extends Component {
     while (newJokes.length < this.props.numJokes) {
       let data = await fetchJoke();
       // if duplicate joke, keep fetching
-      if (this.state.jokes.some((joke) => joke.id === data.id)) {
+      if (this.state.jokes.some(joke => joke.id === data.id)) {
         data = await fetchJoke();
         console.log('duplicate:', data.joke);
       } else {
@@ -45,7 +45,7 @@ class JokeList extends Component {
       }
     }
     // add new jokes to state
-    this.setState((prevState) => ({
+    this.setState(prevState => ({
       jokes: [...prevState.jokes, ...newJokes],
       isLoading: false,
     }));
@@ -69,7 +69,7 @@ class JokeList extends Component {
     this.fetchDadJokes();
   }
   handleScoreUp(id) {
-    const updatedJokes = this.state.jokes.map((joke) => {
+    const updatedJokes = this.state.jokes.map(joke => {
       if (joke.id === id) {
         return { ...joke, score: joke.score + 1 };
       }
@@ -81,7 +81,7 @@ class JokeList extends Component {
   }
 
   handleScoreDown(id) {
-    const updatedJokes = this.state.jokes.map((joke) => {
+    const updatedJokes = this.state.jokes.map(joke => {
       if (joke.id === id) {
         return { ...joke, score: joke.score - 1 };
       }
@@ -96,7 +96,7 @@ class JokeList extends Component {
     const newJokes = [...this.state.jokes];
     const sortedJokes = newJokes
       .sort((a, b) => b.score - a.score)
-      .map((item) => (
+      .map(item => (
         <Joke
           joke={item.joke}
           key={item.id}
@@ -115,15 +115,14 @@ class JokeList extends Component {
     ) : (
       <div className='JokeList'>
         <div className='JokeList-sidebar'>
-          <div>
-            <h1 className='JokeList-title'>Dad Jokes</h1>
-            <FontAwesomeIcon className='logo' icon={faLaughSquint} />
-            <button onClick={this.getMoreJokes}>Get more jokes!</button>
-            <p className='JokeList-counter'>
-              Jokes Generated: {this.state.jokes.length}
-            </p>
-          </div>
+          <h1 className='JokeList-title'>Dad Jokes</h1>
+          <FontAwesomeIcon className='logo' icon={faLaughSquint} />
+          <p className='JokeList-counter'>
+            Jokes Generated: {this.state.jokes.length}
+          </p>
+          <button onClick={this.getMoreJokes}>Get more jokes!</button>
         </div>
+
         <ul className='JokeList-list'>{sortedJokes}</ul>
       </div>
     );
